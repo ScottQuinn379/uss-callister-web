@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USS Callister Web</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #0ff;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #f0f;
+      text-shadow: 0 0 8px #f0f;
+    }
+    .crew-member {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #0ff;
+      background: rgba(0, 255, 255, 0.1);
+    }
+    button {
+      margin-top: 10px;
+      background-color: #111;
+      border: 1px solid #0ff;
+      color: #0ff;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0ff;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>USS Callister: Web Command Bridge</h1>
+  <div id="bridge">
+    <div class="crew-member" id="crew1">
+      <p><strong>Lt. Harper:</strong> Awaiting your command, Captain.</p>
+      <button onclick="giveOrder('Harper')">Give Order</button>
+    </div>
+    <div class="crew-member" id="crew2">
+      <p><strong>Cmdr. Lin:</strong> Systems are stable. No anomalies detected.</p>
+      <button onclick="giveOrder('Lin')">Give Order</button>
+    </div>
+  </div>
+  <script>
+    function giveOrder(name) {
+      alert(`You issued an order to ${quinn}. They comply... for now.`);
+    }
+  </script>
+</body>
+</html>
