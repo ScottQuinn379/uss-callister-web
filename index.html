@@ -43,19 +43,26 @@
 <body>
   <h1>USS Callister: Web Command Bridge</h1>
   <div id="bridge">
-    <div class="crew-member" id="crew1">
+    <div class="crew-member">
       <p><strong>Lt. Harper:</strong> Awaiting your command, Captain.</p>
-      <button onclick="giveOrder('Harper')">Give Order</button>
+      <button class="order-btn" data-name="Harper">Give Order</button>
     </div>
-    <div class="crew-member" id="crew2">
+    <div class="crew-member">
       <p><strong>Cmdr. Lin:</strong> Systems are stable. No anomalies detected.</p>
-      <button onclick="giveOrder('Lin')">Give Order</button>
+      <button class="order-btn" data-name="Lin">Give Order</button>
     </div>
   </div>
+
   <script>
-    function giveOrder(name) {
-      alert(`You issued an order to ${quinn}. They comply... for now.`);
-    }
+    // Wait for the DOM to load before attaching listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.order-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const name = button.getAttribute('data-name');
+          alert(`You issued an order to ${name}. They comply... for now.`);
+        });
+      });
+    });
   </script>
 </body>
 </html>
